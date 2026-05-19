@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resume | Lorraine C. Kharbanda</title>
+    <meta name="description" content="Senior Technical Program Manager with 18+ years in large-scale platform delivery and 13+ years leading global AI/ML programs, data annotation infrastructure, and AI governance at enterprise scale.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #1a1a1a;
+            --paper: #fafaf8;
+            --mid: #6b6b6b;
+            --light: #e8e6e1;
+            --accent: #1B4F72;
+            --accent-light: #2471a3;
+            --warm: #f5f3ee;
+            --positive: #1a6b3c;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* === HEADER === */
+        .resume-header {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 2rem 2.5rem;
+            display: flex;
+            gap: 2rem;
+            align-items: flex-start;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .headshot {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            flex-shrink: 0;
+            border: 3px solid var(--light);
+        }
+
+        .header-text h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.2rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            margin-bottom: 0.15rem;
+        }
+
+        .header-text .title-line {
+            font-size: 1rem;
+            color: var(--accent);
+            font-weight: 500;
+            margin-bottom: 0.6rem;
+        }
+
+        .header-text .contact-line {
+            font-size: 0.85rem;
+            color: var(--mid);
+            line-height: 1.8;
+        }
+
+        .header-text .contact-line a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .header-text .contact-line a:hover {
+            text-decoration: underline;
+        }
+
+        /* === SUMMARY === */
+        .summary {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .summary p {
+            font-size: 1rem;
+            line-height: 1.75;
+            color: var(--ink);
+            max-width: 740px;
+        }
+
+        /* === LINKS BAR === */
+        .links-bar {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1.5rem 2rem;
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .links-bar a {
+            font-size: 0.8rem;
+            font-weight: 600;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: var(--accent);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            border: 1.5px solid var(--accent);
+            transition: all 0.2s;
+        }
+
+        .links-bar a:hover {
+            background: var(--accent);
+            color: var(--paper);
+        }
+
+        /* === SECTION LAYOUT === */
+        .resume-body {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 2rem 4rem;
+        }
+
+        .section {
+            padding: 2.5rem 0;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .section:last-child { border-bottom: none; }
+
+        .section-label {
+            font-size: 0.7rem;
+            font-weight: 600;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--mid);
+            margin-bottom: 1.5rem;
+        }
+
+        /* === COMPETENCIES === */
+        .competencies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        .competency-tag {
+            font-size: 0.75rem;
+            font-weight: 500;
+            padding: 0.35rem 0.7rem;
+            background: var(--warm);
+            border: 1px solid var(--light);
+            color: var(--ink);
+            letter-spacing: 0.02em;
+        }
+
+        /* === JOB ENTRY === */
+        .job {
+            margin-bottom: 2.5rem;
+        }
+
+        .job:last-child { margin-bottom: 0; }
+
+        .job-header {
+            margin-bottom: 1rem;
+        }
+
+        .job-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.25rem;
+            font-weight: 400;
+            color: var(--ink);
+            line-height: 1.3;
+        }
+
+        .job-meta {
+            font-size: 0.85rem;
+            color: var(--mid);
+            margin-top: 0.2rem;
+        }
+
+        .job-meta .company {
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .job-bullets {
+            list-style: none;
+            padding: 0;
+        }
+
+        .job-bullets li {
+            font-size: 0.9rem;
+            line-height: 1.7;
+            color: var(--ink);
+            padding: 0.3rem 0 0.3rem 1.25rem;
+            position: relative;
+            max-width: 740px;
+        }
+
+        .job-bullets li::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0.85rem;
+            width: 5px;
+            height: 1.5px;
+            background: var(--mid);
+        }
+
+        /* === SECTION DIVIDERS === */
+        .era-label {
+            font-size: 0.65rem;
+            font-weight: 600;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent);
+            padding: 0.4rem 0.8rem;
+            background: var(--warm);
+            border-left: 3px solid var(--accent);
+            margin-bottom: 2rem;
+            display: inline-block;
+        }
+
+        /* === EDUCATION / AWARDS === */
+        .simple-entry {
+            margin-bottom: 1rem;
+        }
+
+        .simple-entry:last-child { margin-bottom: 0; }
+
+        .simple-entry-title {
+            font-weight: 600;
+            font-size: 0.9rem;
+            color: var(--ink);
+        }
+
+        .simple-entry-meta {
+            font-size: 0.85rem;
+            color: var(--mid);
+        }
+
+        /* === FOOTER === */
+        .site-footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-top: 2px solid var(--ink);
+            font-size: 0.8rem;
+            color: var(--mid);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .site-footer a:hover { text-decoration: underline; }
+
+        /* === RESPONSIVE === */
+        @media (max-width: 640px) {
+            .resume-header {
+                flex-direction: column;
+                align-items: center;
+                text-align: center;
+                padding: 2rem 1.25rem;
+            }
+            .headshot { width: 100px; height: 100px; }
+            .header-text h1 { font-size: 1.7rem; }
+            .summary { padding: 2rem 1.25rem; }
+            .links-bar { padding: 1.25rem; gap: 0.75rem; justify-content: center; }
+            .resume-body { padding: 0 1.25rem 3rem; }
+            .site-footer { padding: 1.5rem 1.25rem; flex-direction: column; gap: 0.5rem; }
+        }
+
+        @media print {
+            body { background: white; }
+            .links-bar a { border-color: var(--ink); color: var(--ink); }
+            .site-footer { display: none; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="resume-header">
+        <img src="headshot.jpeg" alt="Lorraine C. Kharbanda" class="headshot">
+        <div class="header-text">
+            <h1>Lorraine C. Kharbanda</h1>
+            <div class="title-line">Senior Technical Program Manager | AI/ML Infrastructure &amp; Data Platforms</div>
+            <div class="contact-line">
+                Bellevue, WA &middot; 541.331.8702<br>
+                <a href="https://linkedin.com/in/lorraineckharbanda">LinkedIn</a> &middot;
+                <a href="mailto:rainingsparks@icloud.com">rainingsparks@icloud.com</a>
+            </div>
+        </div>
+    </header>
+
+    <section class="summary">
+        <p>Senior program leader with 18+ years in large-scale platform delivery and 13+ years leading global AI/ML programs, data annotation infrastructure, and AI governance at enterprise scale. Proven track record driving AI program delivery from ideation through production across cross-functional teams spanning engineering, data science, product, and business leadership. Deep expertise in MLOps, LLMOps, cloud AI ecosystems (Azure, AWS, GCP), and enterprise integration frameworks. Experienced operating across regions, time zones, and cultures with strong executive stakeholder management. Builder of AI-augmented workflow engines, use-case prioritization frameworks, and governance structures that deliver measurable business impact.</p>
+    </section>
+
+    <nav class="links-bar">
+        <a href="https://lorraineckharbanda.github.io/case-studies/">Case Studies</a>
+        <a href="https://lorraineckharbanda.github.io/edge-cases/">Edge Cases Framework</a>
+        <a href="https://linkedin.com/in/lorraineckharbanda">LinkedIn</a>
+    </nav>
+
+    <main class="resume-body">
+
+        <!-- CORE COMPETENCIES -->
+        <section class="section">
+            <div class="section-label">Core Competencies</div>
+            <div class="competencies">
+                <span class="competency-tag">Technical Program Leadership & Delivery</span>
+                <span class="competency-tag">AI/ML & DevOps Program Leadership</span>
+                <span class="competency-tag">Executive & Stakeholder Communication</span>
+                <span class="competency-tag">Risk Identification, Mitigation & Escalation</span>
+                <span class="competency-tag">Agile, Lean, Scrum & Hybrid Methodologies</span>
+                <span class="competency-tag">MLOps / LLMOps Delivery</span>
+                <span class="competency-tag">AI Model Training & Data Operations</span>
+                <span class="competency-tag">Multi-Agent Orchestration</span>
+                <span class="competency-tag">Human-in-the-Loop (HiTL) Review & Validation</span>
+                <span class="competency-tag">Model Quality, Drift, Bias & Regression Monitoring</span>
+                <span class="competency-tag">Red Teaming & Disagreement Analysis</span>
+                <span class="competency-tag">Cloud AI (Azure, AWS, GCP)</span>
+                <span class="competency-tag">Snowflake, SQL Server & Analytics Pipelines</span>
+                <span class="competency-tag">Responsible AI & Compliance</span>
+                <span class="competency-tag">AI Factory & Platform Governance</span>
+                <span class="competency-tag">Continuous Improvement & Post-Launch Stabilization</span>
+                <span class="competency-tag">Metrics, Dashboards & Delivery Health Reporting</span>
+                <span class="competency-tag">Cross-Functional Stakeholder Management</span>
+                <span class="competency-tag">Enterprise Integration Frameworks</span>
+                <span class="competency-tag">PoC-to-Production Playbooks</span>
+                <span class="competency-tag">Global Program Delivery</span>
+                <span class="competency-tag">Change Management & AI Fluency</span>
+                <span class="competency-tag">Salesforce, Jira, GitHub, Azure, Confluence</span>
+            </div>
+        </section>
+
+        <!-- PROFESSIONAL EXPERIENCE -->
+        <section class="section">
+            <div class="section-label">Professional Experience</div>
+
+            <div class="era-label">AI/ML &amp; Data Operations</div>
+
+            <!-- LivePerson -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Senior Technical Program Manager, Strategy &amp; Operations</div>
+                    <div class="job-meta"><span class="company">LivePerson</span> &middot; January 2025 &ndash; September 2025</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Designed and deployed an LLM-driven workflow engine automating intake, classification, routing, scoring, ticket generation, and customer communication across Salesforce, ServiceNow, Jira, and Monday.com, reducing manual workflow time by 87%. <a href="https://lorraineckharbanda.github.io/case-studies/cpi.html" style="color:var(--accent);font-size:0.8rem;">[Case Study]</a></li>
+                    <li>Prototyped a four-part logarithmic scaling stack-ranking algorithm aligning feature requests to business goals, revenue impact, product strategy, and operational urgency, serving as the AI use-case prioritization framework for leadership decision-making.</li>
+                    <li>Achieved 96% routing and classification accuracy, 72% faster escalation turnaround for revenue-impacting issues, and 68% reduction in duplicate requests across GTM and CSX.</li>
+                    <li>Drove 100% adoption within pilot organizations through hands-on change management and training across all business functions.</li>
+                    <li>Established operational governance, iteration cycles, and feedback loops, creating a standardized playbook from intake through resolution that outlasted the individual program.</li>
+                    <li>Delivered 7,900+ automated client closure communications, reduced client communication turnaround from 4 months to 3 weeks.</li>
+                </ul>
+            </div>
+
+            <!-- Appen -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Senior Program Manager / Delivery Director, AI Training &amp; Data Operations</div>
+                    <div class="job-meta"><span class="company">Appen</span> &middot; Remote &middot; August 2022 &ndash; August 2024</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Led end-to-end program delivery for ML training data pipelines across computer vision, NLP, and multimodal AI use cases, managing cross-functional teams of annotators, linguists, engineers, and QA specialists across 15+ countries.</li>
+                    <li>Built and operationalized governance frameworks for data quality, model training data lineage, and responsible AI compliance aligned with enterprise client requirements.</li>
+                    <li>Designed use-case intake and prioritization processes for annotation projects, balancing throughput, quality, and cost across concurrent workstreams.</li>
+                    <li>Managed stakeholder alignment across client engineering teams, internal platform teams, and regional delivery leads, operating across time zones, cultures, and competing priorities.</li>
+                    <li>Drove continuous improvement through delivery dashboards, KPI tracking (velocity, accuracy, throughput), and retrospective processes.</li>
+                    <li>Translated model objectives and quality requirements into structured annotation pipelines and human-in-the-loop (HiTL) workflows supporting iterative model training and optimization.</li>
+                    <li>Oversaw requirements definition, delivery planning, scheduling, and execution tracking, ensuring predictable throughput and timely milestone delivery.</li>
+                    <li>Managed SLAs, capacity planning, cost controls, and delivery risk, proactively identifying blockers and escalating issues to maintain momentum.</li>
+                    <li>Partnered with research, analytics, and quality teams to support red teaming efforts and identify disagreement patterns, bias, drift, and regression impacting model performance.</li>
+                    <li>Built and maintained operational dashboards tracking delivery health, cost, quality, throughput, utilization, and risk to enable data-driven decision-making.</li>
+                    <li>Served as senior point of contact for cross-functional stakeholders, providing clear status reporting, issue resolution, and execution accountability.</li>
+                    <li>Grew NearMap satellite imagery annotation account from $800K to $2.8M (+250% QoQ), eliminating $700K/month in late penalties and reducing workforce attrition from 78% to 2%. <a href="https://lorraineckharbanda.github.io/case-studies/nearmap.html" style="color:var(--accent);font-size:0.8rem;">[Case Study]</a></li>
+                </ul>
+            </div>
+
+            <!-- Lionbridge -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Global Program Manager / Delivery Lead, AI &amp; ML Operations</div>
+                    <div class="job-meta"><span class="company">Lionbridge AI</span> (acquired by TELUS International) &middot; Remote &middot; July 2020 &ndash; August 2022</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Served as global delivery lead during a period of rapid, month-over-month exponential growth, supporting bespoke enterprise AI programs across data collection, annotation, and evaluation.</li>
+                    <li>Oversaw trust and safety annotation programs at scale, building quality governance frameworks and compliance-mandated review processes for content moderation and AI safety.</li>
+                    <li>Partnered with client ML engineering teams to iterate on annotation guidelines, edge case taxonomies, and model feedback loops that directly improved training data quality and model performance.</li>
+                    <li>Designed and stood up a formal PMO ahead of industry maturity, establishing intake, prioritization, planning, governance, and reporting processes before AI program management became standardized.</li>
+                    <li>Built lean delivery frameworks and operating rhythms to support highly customized, enterprise AI projects while maintaining speed, quality, and predictability at scale.</li>
+                    <li>Created and scaled global crowd-based delivery models, balancing internal teams, vendors, and crowd contributors to meet volatile demand across clients, use cases, and data modalities.</li>
+                    <li>Partnered closely with engineering and tooling teams to improve annotation platforms, workflow automation, and quality controls as volume and complexity increased.</li>
+                    <li>Defined and tracked delivery KPIs across throughput, quality, utilization, cost, and risk, enabling data-driven decision-making during rapid scale.</li>
+                    <li>Acted as senior escalation point for delivery risk, cross-functional dependencies, and operational breakdowns, stabilizing execution in fast-changing environments.</li>
+                </ul>
+            </div>
+
+            <!-- Zen3 -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Delivery Director / AI Platform Lead, AI &amp; ML Operations</div>
+                    <div class="job-meta"><span class="company">Zen3 Infosolutions</span> (acquired by Tech Mahindra) &middot; Redmond, WA &amp; Remote &middot; July 2018 &ndash; March 2019</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Served as Delivery Director for large-scale Microsoft AI programs supporting computer vision, NLP, and relevance workloads in production environments.</li>
+                    <li>Directed global delivery operations of up to 500 contributors, spanning internal teams, vendors, and distributed workforces across multiple regions.</li>
+                    <li>Led operational design and execution of a custom AI data annotation and evaluation platform, enabling repeatable, auditable AI data workflows.</li>
+                    <li>Defined workflow architecture, quality pipelines, governance controls, and escalation mechanisms to ensure predictable delivery at scale.</li>
+                    <li>Acted as senior decision authority during periods of rapid growth, resolving cross-functional dependencies and stabilizing execution under high demand.</li>
+                </ul>
+            </div>
+
+            <div class="era-label">Web Development, Automation &amp; Early Conversational AI</div>
+
+            <!-- iSoftStone -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Account Director, Microsoft, Digital Marketing, Automation &amp; Chatbot Integration</div>
+                    <div class="job-meta"><span class="company">iSoftStone</span> &middot; Kirkland, WA &amp; Remote &middot; March 2016 &ndash; April 2018</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Led automation, web platform, and early conversational AI programs supporting Microsoft customer self-service experiences.</li>
+                </ul>
+            </div>
+
+            <!-- HCL -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Global Senior Program Manager, Web Development &amp; Chatbot Integration</div>
+                    <div class="job-meta"><span class="company">HCL</span> &middot; Redmond, WA &middot; July 2014 &ndash; March 2016</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Led global technical programs for large-scale web platforms and chatbot integrations supporting Microsoft consumer products.</li>
+                    <li>Delivered award-winning Surface.com and Surface Support experiences (WEBBY Top Ten Support Sites). <a href="https://lorraineckharbanda.github.io/case-studies/surface.html" style="color:var(--accent);font-size:0.8rem;">[Case Study]</a></li>
+                </ul>
+            </div>
+
+            <!-- AMI -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Director, Web Development</div>
+                    <div class="job-meta"><span class="company">AMI Advertising</span> &middot; Walla Walla, WA &middot; May 2013 &ndash; December 2014</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Led web platform strategy and delivery across multiple client digital properties.</li>
+                    <li>Earned MARCOM International Gold Award for digital platform excellence.</li>
+                </ul>
+            </div>
+
+            <!-- Accenture -->
+            <div class="job">
+                <div class="job-header">
+                    <div class="job-title">Technical Program &amp; Web Operations Manager, Microsoft OEM &amp; Partner Programs</div>
+                    <div class="job-meta"><span class="company">Accenture / Cayuse Holdings</span> &middot; Remote &middot; March 2008 &ndash; May 2013</div>
+                </div>
+                <ul class="job-bullets">
+                    <li>Led technical programs, platform operations, and release management for large-scale Microsoft partner ecosystems.</li>
+                    <li>Managed OEMWeb, OCE, and ECE platforms supporting 17,000+ OEM partners under federal consent decree, with full data provenance, audit infrastructure, and zero compliance failures. <a href="https://lorraineckharbanda.github.io/case-studies/oemweb.html" style="color:var(--accent);font-size:0.8rem;">[Case Study]</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PUBLICATIONS -->
+        <section class="section">
+            <div class="section-label">Publications &amp; Thought Leadership</div>
+            <div class="simple-entry">
+                <div class="simple-entry-title"><a href="https://lorraineckharbanda.github.io/edge-cases/" style="color:var(--accent);text-decoration:none;">The Edge Cases of Artificial Intelligence: A Plural-Epistemic Framework for AI Wisdom</a></div>
+                <div class="simple-entry-meta">Published 2026 &middot; GitHub Pages &middot; Identifies six civilizational AI failure modes through a plural-epistemic lens</div>
+            </div>
+            <div class="simple-entry">
+                <div class="simple-entry-title"><a href="https://lorraineckharbanda.github.io/case-studies/" style="color:var(--accent);text-decoration:none;">Case Studies: Program Management, Cross-Functional Delivery at Scale &amp; Operational Excellence</a></div>
+                <div class="simple-entry-meta">Published 2026 &middot; GitHub Pages &middot; Four detailed case studies with measurable outcomes</div>
+            </div>
+            <div class="simple-entry">
+                <div class="simple-entry-title">On The Origin of Trained Wisdom</div>
+                <div class="simple-entry-meta">Book, In Development &middot; Exploring the intersection of human judgment and AI systems at scale</div>
+            </div>
+        </section>
+
+        <!-- AWARDS -->
+        <section class="section">
+            <div class="section-label">Recognition</div>
+            <div class="simple-entry">
+                <div class="simple-entry-title">WEBBY Top Ten Support Site</div>
+                <div class="simple-entry-meta">Surface.com &amp; Surface Support &middot; Microsoft / HCL</div>
+            </div>
+            <div class="simple-entry">
+                <div class="simple-entry-title">MARCOM International Gold Award</div>
+                <div class="simple-entry-meta">Digital Platform Excellence &middot; AMI Advertising</div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <span>&copy; 2026 Lorraine C. Kharbanda</span>
+        <span>
+            <a href="https://lorraineckharbanda.github.io/case-studies/">Case Studies</a> &middot;
+            <a href="https://lorraineckharbanda.github.io/edge-cases/">Edge Cases</a>
+        </span>
+    </footer>
+
+</body>
+</html>
