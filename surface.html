@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Surface Pro Global Launch Release Management | Lorraine C. Kharbanda</title>
+    <meta name="description" content="QA, stress testing, and high-QPS readiness for a multi-device, multi-locale global launch. Case study by Lorraine C. Kharbanda.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="back-nav"><a href="index.html">&larr; All Case Studies</a></nav>
+
+    <header class="cs-header">
+        <div class="cs-number">Case Study 03</div>
+        <h1>Surface Pro Global Launch Release Management</h1>
+        <div class="cs-subtitle">QA, Stress Testing &amp; High-QPS Readiness for a Multi-Device, Multi-Locale Global Launch</div>
+    </header>
+
+    <main class="cs-body">
+        <section class="cs-section">
+            <div class="cs-section-label">The Problem</div>
+            <p>In 2015, Microsoft was launching the new Surface Pro alongside multiple devices and accessories, a full rebuild of the global marketing and support web experience spanning 3,000+ web pages, expansion from 32 to 43 languages, and the first-ever deployment of Microsoft's chatbot across Marketing and Support. On top of the product launch, we were simultaneously migrating the entire site from browser-specific and device-specific pages to a full-bleed, fully responsive architecture, which required rebuilding severely outdated CMS stack libraries from the ground up.</p>
+            <p>This meant running a bimonthly release cadence aligned to Microsoft's DevOps deployment schedule, with full feature rigor, documentation, compliance testing, and scheduling at every release. All of this had to ship in one quarter. This was a high-QPS, high-revenue, zero-tolerance-for-failure launch compounded by a platform architecture change and a demanding release management cycle.</p>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section-label">My Role</div>
+            <p>I led engineering and front-end web development for the Surface web experience. Microsoft set strategy, design, and content requirements. Multiple vendors fed content into my development pipeline, and subsidiaries provided global direction for localization across 43 languages. I owned timelines for my engineering team and managed drop-dead dependency dates for every vendor, because one missed delivery cascaded through everything downstream. As program owner, my accountability was cross-functional launch readiness across front-end engineering, infrastructure, marketing, and support for a high-risk, high-visibility global release with clear success criteria for performance, reliability, and customer experience under peak load.</p>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section-label">What I Built</div>
+
+            <div class="built-item">
+                <div class="built-item-title">Integrated Project Plan Aligned to Microsoft DevOps</div>
+                <p>Built our project plan in direct alignment with Microsoft's engineering deployment schedule. The site was being taken from browser-specific and device-specific pages to a full-bleed, fully responsive architecture, which required a complete rebuild of the CMS stack libraries. The existing libraries were severely outdated, and responsive design could not be impacted by code running through thousands of archived libraries. This meant deleting and editing simultaneously, deploying bimonthly in coordination with Microsoft's DevOps team with full feature rigor, documentation, compliance testing, and scheduling at every release.</p>
+            </div>
+
+            <div class="built-item">
+                <div class="built-item-title">Launch Security &amp; Placeholder Management</div>
+                <p>For these confidential product launches, all 3,000+ pages across 43 languages used placeholder images and internal codenames throughout development. While my engineering team built the sites, I managed the full placeholder system and built a script to execute photo swaps and codename-to-product-name changes across all pages simultaneously, deployed from the war room at launch.</p>
+            </div>
+
+            <div class="built-item">
+                <div class="built-item-title">Production-Realistic Load &amp; Stress Testing</div>
+                <p>Modeled launch-day traffic using real business inputs: paid media spend across channels, expected CTR and engagement curves, and historical social amplification patterns. Explicitly planned for non-linear traffic growth from press, word-of-mouth, and social virality. Stress-tested against sustained peak QPS, burst QPS, and mixed read/write workloads.</p>
+            </div>
+
+            <div class="built-item">
+                <div class="built-item-title">Capacity &amp; Risk Buffers</div>
+                <p>Deliberately over-provisioned, doubling projected bandwidth and reserving 33% CPU headroom with engineering and infrastructure teams on standby. This reserve was activated during launch to absorb peak load without customer impact.</p>
+            </div>
+
+            <div class="built-item">
+                <div class="built-item-title">P95/P99 Latency Monitoring</div>
+                <p>Monitored tail latency rather than averages, with explicit thresholds tied to user experience and business KPIs. These metrics triggered predefined operational responses before users noticed degradation.</p>
+            </div>
+
+            <div class="built-item">
+                <div class="built-item-title">Progressive Rollouts &amp; Feature Flags</div>
+                <p>Used feature flags for responsive layouts, quiz logic, and chatbot activation, enabling staged rollout by region and traffic segment with instant rollback capability.</p>
+            </div>
+
+            <div class="built-item">
+                <div class="built-item-title">Fallbacks &amp; Kill Switches</div>
+                <p>Pre-mapped fallback triggers tied to latency thresholds so degradation was intentional, not reactive. High-cost interactions (quizzes, chat) were isolated behind feature flags to prevent cascading failures while core conversion paths to the Microsoft Store were explicitly protected.</p>
+            </div>
+
+            <div class="built-item">
+                <div class="built-item-title">War Room Execution</div>
+                <p>Ran a live cross-functional war room during launch spanning engineering, infrastructure, marketing, support, social, and store teams, prioritizing fixes in real time: bug fixes vs. archival, placeholder swaps, server scaling decisions.</p>
+            </div>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section-label">Results</div>
+            <p>Reserve bandwidth and CPU headroom activated as designed to absorb peak load. No major outages despite exceeding projected traffic. Core conversion paths remained stable. Fallback mechanisms triggered deliberately, not in response to failure. Customer-facing degradation was controlled and limited to non-critical features. Surface.com and Surface Support earned WEBBY Top Ten Support Site recognition.</p>
+
+            <div class="closing-statement">The success was not that we never needed our reserves. It was that when we did, the system responded predictably, and the business never felt the impact.</div>
+        </section>
+
+        <section class="cs-section">
+            <div class="cs-section-label">Relevance</div>
+            <div class="relevance-box">
+                <div class="relevance-item">Directly parallels any environment where multiple engineering, product, and operations teams have interdependent deliverables and hard dependency dates. In this case, Microsoft set strategy, multiple vendors fed content into my development pipeline, and 43 subsidiaries provided global direction, all with cascading deadlines that could not slip without downstream impact.</div>
+                <div class="relevance-item">Demonstrates building structured release management discipline where ad hoc coordination would have caused cascading failures across hundreds of contributors and thousands of deliverables.</div>
+                <div class="relevance-item">Shows how to move from reactive, siloed planning to rigorous cross-team dependency tracking with pre-mapped fallback triggers, feature flags, and progressive rollouts.</div>
+            </div>
+        </section>
+    </main>
+
+    <nav class="cs-nav">
+        <a href="nearmap.html">&larr; Previous: NearMap</a>
+        <a href="oemweb.html">Next: OEMWeb &rarr;</a>
+    </nav>
+
+    <footer class="site-footer">
+        <span>&copy; 2026 Lorraine C. Kharbanda</span>
+        <a href="index.html">All Case Studies</a>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Case Studies | Lorraine C. Kharbanda</title>
+    <meta name="description" content="Case studies in program management, cross-functional delivery at scale, and operational excellence by Lorraine C. Kharbanda.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --ink: #1a1a1a;
+            --paper: #fafaf8;
+            --mid: #6b6b6b;
+            --light: #e8e6e1;
+            --accent: #1B4F72;
+            --accent-light: #2471a3;
+            --warm: #f5f3ee;
+        }
+
+        body {
+            font-family: 'DM Sans', sans-serif;
+            background: var(--paper);
+            color: var(--ink);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .site-header {
+            padding: 3rem 2rem 2rem;
+            max-width: 900px;
+            margin: 0 auto;
+            border-bottom: 2px solid var(--ink);
+        }
+
+        .site-header h1 {
+            font-family: 'DM Serif Display', serif;
+            font-size: 2.4rem;
+            font-weight: 400;
+            letter-spacing: -0.02em;
+            color: var(--ink);
+            margin-bottom: 0.25rem;
+        }
+
+        .site-header .subtitle {
+            font-size: 0.95rem;
+            color: var(--mid);
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+        }
+
+        .site-header .contact {
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: var(--mid);
+        }
+
+        .site-header .contact a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .site-header .contact a:hover {
+            text-decoration: underline;
+        }
+
+        .intro {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2.5rem 2rem 1.5rem;
+        }
+
+        .intro p {
+            font-size: 1.1rem;
+            color: var(--mid);
+            max-width: 680px;
+            line-height: 1.7;
+        }
+
+        .case-studies-grid {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 1rem 2rem 4rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0;
+        }
+
+        .case-study-card {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+            padding: 2rem 0;
+            border-bottom: 1px solid var(--light);
+            transition: all 0.2s ease;
+        }
+
+        .case-study-card:first-child {
+            border-top: 1px solid var(--light);
+        }
+
+        .case-study-card:hover {
+            padding-left: 1rem;
+        }
+
+        .case-study-card:hover .card-title {
+            color: var(--accent);
+        }
+
+        .card-number {
+            font-size: 0.75rem;
+            font-weight: 600;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--mid);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-title {
+            font-family: 'DM Serif Display', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            line-height: 1.3;
+            margin-bottom: 0.35rem;
+            transition: color 0.2s ease;
+        }
+
+        .card-subtitle {
+            font-size: 0.95rem;
+            color: var(--mid);
+            margin-bottom: 1rem;
+            font-style: italic;
+        }
+
+        .card-description {
+            font-size: 0.9rem;
+            color: var(--mid);
+            max-width: 640px;
+            line-height: 1.65;
+        }
+
+        .card-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+
+        .card-tag {
+            font-size: 0.7rem;
+            font-weight: 500;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            padding: 0.3rem 0.65rem;
+            background: var(--warm);
+            border: 1px solid var(--light);
+            color: var(--mid);
+        }
+
+        .site-footer {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 2rem;
+            border-top: 2px solid var(--ink);
+            font-size: 0.8rem;
+            color: var(--mid);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .site-footer a {
+            color: var(--accent);
+            text-decoration: none;
+        }
+
+        .site-footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 640px) {
+            .site-header { padding: 2rem 1.25rem 1.5rem; }
+            .site-header h1 { font-size: 1.8rem; }
+            .intro { padding: 2rem 1.25rem 1rem; }
+            .case-studies-grid { padding: 1rem 1.25rem 3rem; }
+            .card-title { font-size: 1.25rem; }
+            .site-footer { padding: 1.5rem 1.25rem; flex-direction: column; gap: 0.5rem; }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <h1>Lorraine C. Kharbanda</h1>
+        <div class="subtitle">Senior Technical Program Manager &middot; AI/ML Operations &amp; Governance</div>
+        <div class="contact">
+            <a href="https://linkedin.com/in/lorraineckharbanda">LinkedIn</a> &middot;
+            <a href="https://lorraineckharbanda.github.io/edge-cases/">Edge Cases Framework</a>
+        </div>
+    </header>
+
+    <section class="intro">
+        <p>Case studies in program management, cross-functional delivery at scale, and operational excellence. Each represents a system I built from the ground up to solve a real organizational problem, with measurable outcomes.</p>
+    </section>
+
+    <section class="case-studies-grid">
+        <a href="cpi.html" class="case-study-card">
+            <div class="card-number">Case Study 01</div>
+            <div class="card-title">Customer Product Interlock (CPI)</div>
+            <div class="card-subtitle">Cross-Functional AI Workflow Redesign for Program Visibility &amp; Reporting</div>
+            <div class="card-description">Designed and deployed an LLM-driven workflow engine that unified four disconnected platforms into a single automated pipeline, replacing months of manual processing with real-time, data-driven program management.</div>
+            <div class="card-tags">
+                <span class="card-tag">AI/ML Automation</span>
+                <span class="card-tag">Systems Integration</span>
+                <span class="card-tag">Cross-Functional Delivery</span>
+                <span class="card-tag">Reporting Infrastructure</span>
+            </div>
+        </a>
+
+        <a href="nearmap.html" class="case-study-card">
+            <div class="card-number">Case Study 02</div>
+            <div class="card-title">Transforming Satellite Imagery Annotation for NearMap</div>
+            <div class="card-subtitle">Scaling a High-Complexity Data Collection Pipeline from Crisis to Growth</div>
+            <div class="card-description">Took a hemorrhaging annotation pipeline, 78% attrition, $700K/month in penalties, and rebuilt it into a scalable operation that grew the account 250% in one quarter while eliminating all late penalties.</div>
+            <div class="card-tags">
+                <span class="card-tag">Data Annotation</span>
+                <span class="card-tag">Human-in-the-Loop</span>
+                <span class="card-tag">Pipeline Optimization</span>
+                <span class="card-tag">Account Growth</span>
+            </div>
+        </a>
+
+        <a href="surface.html" class="case-study-card">
+            <div class="card-number">Case Study 03</div>
+            <div class="card-title">Surface Pro Global Launch Release Management</div>
+            <div class="card-subtitle">QA, Stress Testing &amp; High-QPS Readiness for a Multi-Device, Multi-Locale Global Launch</div>
+            <div class="card-description">Led engineering and release management for a 3,000+ page, 43-language global web experience launching alongside a major product release, a platform migration, and a chatbot deployment, all in one quarter.</div>
+            <div class="card-tags">
+                <span class="card-tag">Release Management</span>
+                <span class="card-tag">Load Testing</span>
+                <span class="card-tag">Global Launch</span>
+                <span class="card-tag">Microsoft</span>
+            </div>
+        </a>
+
+        <a href="oemweb.html" class="case-study-card">
+            <div class="card-number">Case Study 04</div>
+            <div class="card-title">Data Governance Under Federal Judicial Oversight</div>
+            <div class="card-subtitle">OEMWeb, OCE &amp; ECE Platform Management for the Microsoft Antitrust Consent Decree</div>
+            <div class="card-description">Led platform operations and data governance for the systems managing Microsoft's 17,000+ OEM partner ecosystem under federal consent decree, where every data action had to be auditable, versioned, and court-ready.</div>
+            <div class="card-tags">
+                <span class="card-tag">Data Governance</span>
+                <span class="card-tag">Regulatory Compliance</span>
+                <span class="card-tag">Audit Infrastructure</span>
+                <span class="card-tag">Federal Oversight</span>
+            </div>
+        </a>
+    </section>
+
+    <footer class="site-footer">
+        <span>&copy; 2026 Lorraine C. Kharbanda</span>
+        <span>Prepared May 2026</span>
+    </footer>
+</body>
+</html>
