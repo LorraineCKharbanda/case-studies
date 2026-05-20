@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Redesigning AI annotation through cognitive load analysis and LLM pre-labeling. Case study by Lorraine C. Kharbanda.">
+    <title>Walmart Product Categorization | Lorraine C. Kharbanda</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+            background: #fafaf8;
+        }
+        a { color: #2a5a8a; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        .case-label {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            color: #888;
+            margin-bottom: 0.25rem;
+        }
+        h1 {
+            font-size: 2rem;
+            line-height: 1.2;
+            margin-bottom: 0.5rem;
+            color: #111;
+        }
+        .subtitle {
+            font-size: 1.1rem;
+            color: #555;
+            margin-bottom: 2.5rem;
+            font-style: italic;
+        }
+        h2 {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #333;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            padding-bottom: 0.3rem;
+            border-bottom: 1px solid #ddd;
+        }
+        h3 {
+            font-size: 1.1rem;
+            color: #222;
+            margin-top: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        p { margin-bottom: 1rem; }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 1.5rem 0;
+            font-size: 0.95rem;
+        }
+        th, td {
+            text-align: left;
+            padding: 0.6rem 1rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        th {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #888;
+            background: #f5f5f3;
+        }
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+        }
+        .tag {
+            font-family: 'Helvetica Neue', Arial, sans-serif;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            padding: 0.3rem 0.7rem;
+            background: #eee;
+            color: #555;
+            border-radius: 2px;
+        }
+        .footer {
+            margin-top: 4rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid #ddd;
+            font-size: 0.85rem;
+            color: #999;
+        }
+        .footer a { color: #888; }
+        blockquote {
+            border-left: 3px solid #ccc;
+            padding-left: 1.25rem;
+            margin: 1.5rem 0;
+            color: #555;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <a href="https://lorraineckharbanda.github.io/case-studies/index.html" class="back-link">&larr; All Case Studies</a>
+
+    <div class="case-label">Case Study 05</div>
+    <h1>Walmart Product Categorization</h1>
+    <p class="subtitle">Redesigning AI Annotation Through Cognitive Load Analysis and LLM Pre-Labeling</p>
+
+    <h2>The Problem</h2>
+    <p>Walmart's product categorization pipeline was processing millions of annotations per month across three locales (en-US, en-MX, sp-MX) through Appen's crowd platform. Each annotation required matching a product image, title, and description to one of 480 categories. The project was reported as stable. The client was happy. No escalation flags had been raised.</p>
+    <p>When I inherited the project as part of a restructuring that put me in charge of all platform-connected, API-driven, and high-automation annotation projects, I pulled a subset of 500 annotations and reviewed them against the guidelines myself. Quality was at 69%, far below acceptable thresholds for a project reported as stable.</p>
+
+    <h2>The Diagnosis</h2>
+    <p>The dashboards couldn't explain why quality was low. So I spent a weekend working as an annotator on the en-US project, targeting eight hours on Saturday and eight hours on Sunday. By midmorning Saturday, I had my answer: the cognitive load of scanning 480 categories per annotation was unsustainable. My brain was fatigued within hours. The annotators weren't being careless. The task design was making precision impossible at volume. They were generalizing categories because the human mind cannot reliably distinguish between 480 options under production speed and sustained duration.</p>
+    <p>This was not a workforce quality problem. It was a task architecture problem. No amount of retraining, quality audits, or performance management would fix it, because the failure was built into the design of the work itself.</p>
+
+    <h2>What I Built</h2>
+
+    <h3>LLM Pre-Labeling Integration</h3>
+    <p>That following Monday, I met with our engineering leads and proposed loading an LLM into the image annotation platform (via Appen's China entity) to pre-label the data. Out of the box, the model hit 74% accuracy, already above the human baseline. This validated the hypothesis: the categorization task was better suited to machine-first classification with human validation than to unaided human categorization.</p>
+
+    <h3>Task Redesign: From Categorization to Validation</h3>
+    <p>I redesigned the entire project from a 480-category classification task into a yes/no validation task. Instead of asking annotators to find the correct category from 480 options, they reviewed the LLM's suggestion and accepted or rejected it. This fundamentally transformed the cognitive demand: from open-ended search across hundreds of options to binary judgment on a single recommendation.</p>
+
+    <h3>Model Training to Gold Set</h3>
+    <p>Over three months, the human validation data trained both Appen's internal categorization model and Walmart's model into a gold set at 98% accuracy. The human-AI feedback loop was the mechanism: each validated annotation improved the model's next prediction, which in turn made the human validation task faster and more accurate.</p>
+
+    <h3>New Product Line</h3>
+    <p>The LLM pre-labeling plus human validation pattern I designed for Walmart became a replicable model. We opened a new product line of annotation work at Appen for pre-labeled data, extending the approach beyond a single client into a scalable commercial offering. The Walmart project itself paid for the training of the categorization model entirely.</p>
+
+    <h2>Results</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Metric</th>
+                <th>Before</th>
+                <th>After</th>
+                <th>Impact</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Annotation Quality</td>
+                <td>69%</td>
+                <td>98%</td>
+                <td>Gold set accuracy</td>
+            </tr>
+            <tr>
+                <td>Account Revenue</td>
+                <td>$1.8M</td>
+                <td>$3.2M</td>
+                <td>+78% growth</td>
+            </tr>
+            <tr>
+                <td>Gross Margin</td>
+                <td>21%</td>
+                <td>58%</td>
+                <td>+37 points</td>
+            </tr>
+            <tr>
+                <td>Annotator Engagement</td>
+                <td>Baseline</td>
+                <td>+108%</td>
+                <td>2x time on task</td>
+            </tr>
+            <tr>
+                <td>Platform Redesign</td>
+                <td>&mdash;</td>
+                <td>4 weeks</td>
+                <td>Concept to deployment</td>
+            </tr>
+            <tr>
+                <td>Gold Set Training</td>
+                <td>&mdash;</td>
+                <td>3 months</td>
+                <td>98% accuracy achieved</td>
+            </tr>
+            <tr>
+                <td>Crowd Pool</td>
+                <td colspan="3">1,000+ annotators per locale across 3 locales</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>Why This Matters</h2>
+    <p>This case study is about the difference between managing a workforce and designing a system. The quality failure at 69% was invisible to dashboards and invisible to the client. It surfaced only because I sat in the annotator's chair and experienced the cognitive reality of the task. The fix was not better training or stricter QA. It was recognizing that the task itself was designed beyond human cognitive capacity at production scale, and redesigning the human-AI interaction pattern so that the machine handled what machines do well (search across 480 categories) and humans handled what humans do well (binary judgment on a specific recommendation).</p>
+    <p>The result was not just better quality. It was a fundamentally more sustainable operation: annotators could work more than twice as long, the account grew 78%, gross margin nearly tripled, and the pattern became a new product line. Task design is system design, and system design is business design.</p>
+
+    <div class="tags">
+        <span class="tag">AI/ML Annotation</span>
+        <span class="tag">LLM Pre-Labeling</span>
+        <span class="tag">Task Design</span>
+        <span class="tag">Cognitive Load</span>
+        <span class="tag">Human-in-the-Loop</span>
+        <span class="tag">Platform Redesign</span>
+        <span class="tag">Account Growth</span>
+    </div>
+
+    <div class="footer">
+        &copy; 2026 Lorraine C. Kharbanda
+        <a href="https://lorraineckharbanda.github.io/case-studies/">Case Studies</a> &middot;
+        <a href="https://lorraineckharbanda.github.io/edge-cases/">Edge Cases</a>
+    </div>
+</body>
+</html>
