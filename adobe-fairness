@@ -13,7 +13,7 @@
 <body>
     <nav class="back-nav"><a href="index.html">&larr; All Case Studies</a></nav>
     <header class="cs-header">
-        <div class="cs-number">Case Study 06</div>
+        <div class="cs-number">Case Study 02</div>
         <h1>Adobe Facial Feature Annotation: Bias Detection &amp; Fairness Audit at Scale</h1>
         <div class="cs-subtitle">Building Responsible AI Data Pipelines for Systems That Touch Every Face</div>
     </header>
@@ -96,8 +96,8 @@
         </section>
     </main>
     <nav class="cs-nav">
-        <a href="oemweb.html">&larr; Previous: OEMWeb</a>
-        <span class="nav-disabled">Next &rarr;</span>
+        <a href="cpi.html">&larr; Previous: CPI</a>
+        <a href="nearmap.html">Next: NearMap &rarr;</a>
     </nav>
     <footer class="site-footer">
         <span>&copy; 2026 Lorraine C. Kharbanda</span>
