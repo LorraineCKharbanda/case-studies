@@ -124,6 +124,30 @@ body {
     color: var(--ink);
     max-width: 680px;
 }
+.built-item ul {
+    list-style: none;
+    margin: 0.75rem 0 1rem 0;
+    max-width: 680px;
+}
+
+.built-item li {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: var(--ink);
+    padding: 0.25rem 0 0.25rem 1.25rem;
+    position: relative;
+}
+
+.built-item li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0.75rem;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    background: var(--accent);
+}
 
 /* RESULTS TABLE */
 .results-table {
