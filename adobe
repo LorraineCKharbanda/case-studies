@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adobe Facial Feature Annotation: Bias Detection &amp; Fairness Audit | Lorraine C. Kharbanda</title>
+    <meta name="description" content="Building responsible AI data pipelines through bias detection, fairness auditing, and demographic edge case collection at scale. Case study by Lorraine C. Kharbanda.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav class="back-nav"><a href="index.html">&larr; All Case Studies</a></nav>
+    <header class="cs-header">
+        <div class="cs-number">Case Study 06</div>
+        <h1>Adobe Facial Feature Annotation: Bias Detection &amp; Fairness Audit at Scale</h1>
+        <div class="cs-subtitle">Building Responsible AI Data Pipelines for Systems That Touch Every Face</div>
+    </header>
+    <main class="cs-body">
+        <section class="cs-section">
+            <div class="cs-section-label">The Problem</div>
+            <p>Adobe's AI tools &mdash; Firefly, Photoshop, and every product supporting facial features &mdash; depend on annotated image data to function. The initial dataset of 10,000 images had no formal audit process for annotator bias, no systematic coverage of skin tone diversity, and no documented standard for demographic edge cases. Without that foundation, the data underpinning production AI would quietly encode and amplify the blind spots of whoever collected it.</p>
+            <p>Bias in training data doesn't announce itself. It ships. Then it scales. And in consumer AI tools used by millions of people worldwide, the cost of that bias is paid by the very people least represented in the original dataset.</p>
+        </section>
+        <section class="cs-section">
+            <div class="cs-section-label">My Role</div>
+            <p>As Program Manager at Lionbridge (later acquired by TELUS International), I led the annotation program for Adobe's facial feature dataset end-to-end. This included a 500-person annotation team based in India, a global crowd workforce of millions, and third-party collection vendors operating in hard-to-reach regions including Sub-Saharan Africa. I was responsible for annotation quality, annotator bias detection, data integrity verification, fairness auditing, and the strategic expansion of the dataset to meet responsible AI standards the original contract had not anticipated.</p>
+        </section>
+        <section class="cs-section">
+            <div class="cs-section-label">What I Did</div>
+            <div class="built-item">
+                <div class="built-item-title">Bias Caught in Production &mdash; Before It Shipped</div>
+                <p>As part of standard quality controls, I ran a 1% live sample through the annotation pipeline end-to-end in real time. What came back was a systematic error: annotators were labeling white subjects as Native American. Not occasionally &mdash; consistently. This wasn't a data gap or a label ambiguity. It was human bias operating at production speed inside a major AI pipeline.</p>
+                <p>I pulled the team immediately. I built a video presentation using the flagged samples directly and walked every annotator through what had been submitted versus what the guidelines required. The issue wasn't malice &mdash; the annotators weren't reading the guidelines at all, and in the absence of that anchor, their own cultural reference points filled the gap. Making it visible changed the behavior.</p>
+            </div>
+            <div class="built-item">
+                <div class="built-item-title">A Fairness Audit the Contract Didn't Ask For</div>
+                <p>After the annotation bias incident, I kept looking. What I found was that the bias wasn't just in my team &mdash; it was baked into the source data. The dataset had systematic gaps in skin tone coverage, facial feature diversity, and demographic representation. These weren't edge cases that had slipped through. They were populations that had never been included.</p>
+                <p>I compiled a full catalogue of missing demographic coverage with my team, anchored to the <strong>Monk Skin Tone Scale</strong> &mdash; the 10-shade framework developed specifically to address the limitations of earlier skin tone taxonomies. But 10 shades weren't enough. We pushed further, using the <strong>Individual Typology Angle (ITA)</strong> to expand the coverage framework beyond the standard scale and ensure we were collecting for the true range of human variation, not just the most common categories.</p>
+            </div>
+            <div class="built-item">
+                <div class="built-item-title">Edge Case Collection at Scale &mdash; With Real Integrity Controls</div>
+                <p>Knowing what was missing was only the first step. Collecting it responsibly was the harder problem. For underrepresented demographics &mdash; particularly in regions of Africa where standard crowd infrastructure doesn't reach &mdash; I worked with third-party local vendors, with all consent, data use policy, and IP documentation completed in hard copy on the ground. Data provenance wasn't a checkbox. It was a legal and ethical requirement I enforced at the vendor level.</p>
+                <p>For each collection session, I built a structured shot protocol designed to capture every meaningful variation a production AI system would encounter in the real world:</p>
+                <ul>
+                    <li>Hair variants: up and down</li>
+                    <li>Accessories: no glasses, glasses, sunglasses, hat</li>
+                    <li>Backgrounds: clear and busy</li>
+                    <li>Shot distance: headshot, torso, full body</li>
+                    <li>All combinations of the above</li>
+                </ul>
+                <p>Every submission was verified for authenticity: IP address verification to confirm geographic accuracy, and a live video call cross-referencing the submitted sample images to the actual person &mdash; confirming the data was real, not recycled or fabricated.</p>
+            </div>
+            <div class="built-item">
+                <div class="built-item-title">Synthetic Expansion &mdash; Closing the Remaining Gaps</div>
+                <p>After exhausting authentic collection for the hardest-to-reach demographic segments, I worked with a design team to expand the dataset further through synthetic data generation, adding carefully constructed examples to fill the remaining coverage gaps without introducing new sources of bias. This brought the final dataset to 50,000 images &mdash; five times the original scope.</p>
+            </div>
+            <div class="built-item">
+                <div class="built-item-title">From Images to Video &mdash; Expanding the Framework</div>
+                <p>The fairness and quality standards built for this program became the foundation for Adobe's subsequent video annotation work. We moved into segmenting spoken phrases and thoughts within transcripts, and annotating video scenes with bounding boxes across hosts, subjects, participants, and spatial planes &mdash; foreground, midground, background. The rigor established in the image program transferred directly.</p>
+            </div>
+        </section>
+        <section class="cs-section">
+            <div class="cs-section-label">Results</div>
+            <table class="results-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Result</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td class="metric-name">Dataset scale at program close</td><td class="metric-value">50,000 images (5&times; original scope)</td></tr>
+                    <tr><td class="metric-name">Dataset growth stages</td><td class="metric-value">10K &rarr; 25K (collection) &rarr; 50K (synthetic)</td></tr>
+                    <tr><td class="metric-name">Annotation team managed</td><td class="metric-value">500 (India) + millions globally</td></tr>
+                    <tr><td class="metric-name">Production bias caught and remediated</td><td class="metric-value">Before any affected data shipped to Adobe</td></tr>
+                    <tr><td class="metric-name">Demographic coverage framework</td><td class="metric-value">Monk Skin Tone Scale + ITA expansion</td></tr>
+                    <tr><td class="metric-name">Hard-to-reach data collection</td><td class="metric-value">Sub-Saharan Africa via local vendors with hard-copy consent</td></tr>
+                    <tr><td class="metric-name">Data provenance controls</td><td class="metric-value">IP verification + live video call authentication per submission</td></tr>
+                    <tr><td class="metric-name">Adoption</td><td class="metric-value">Dataset used across all Adobe AI datasets and all projects</td></tr>
+                    <tr><td class="metric-name">Products powered</td><td class="metric-value">Adobe Firefly, Photoshop, and all facial-feature AI tools</td></tr>
+                </tbody>
+            </table>
+            <div class="qualitative">
+                <p>Adobe adopted the fairness standards and data quality protocols from this program across their full AI data pipeline. The dataset we built &mdash; and the integrity controls we put around it &mdash; became the baseline for all subsequent annotation work, including video. The client's satisfaction wasn't just with the images. It was with the framework.</p>
+            </div>
+        </section>
+        <section class="cs-section">
+            <div class="cs-section-label">Relevance</div>
+            <div class="relevance-box">
+                <div class="relevance-item">Demonstrates end-to-end ownership of a Responsible AI data initiative &mdash; from bias detection in production through systematic gap analysis, structured collection, and measurable remediation &mdash; with real stakes and real outcomes.</div>
+                <div class="relevance-item">Shows the operational reality of ethical AI: data provenance is a legal requirement, not a principle. Enforcing consent, IP verification, and authenticity controls in remote regions with no digital infrastructure is a program management problem, not just an ethics one.</div>
+                <div class="relevance-item">Illustrates how fairness auditing expands scope when done rigorously &mdash; the program grew 5&times; not because the contract required it, but because the data demanded it. That kind of proactive gap identification and structured remediation is what separates a responsible AI program from a checkbox exercise.</div>
+            </div>
+        </section>
+    </main>
+    <nav class="cs-nav">
+        <a href="oemweb.html">&larr; Previous: OEMWeb</a>
+        <span class="nav-disabled">Next &rarr;</span>
+    </nav>
+    <footer class="site-footer">
+        <span>&copy; 2026 Lorraine C. Kharbanda</span>
+        <a href="index.html">All Case Studies</a>
+    </footer>
+</body>
+</html>
