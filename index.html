@@ -10,7 +10,6 @@
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=DM+Serif+Display&display=swap" rel="stylesheet">
     <style>
         *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
-
         :root {
             --ink: #1a1a1a;
             --paper: #fafaf8;
@@ -20,7 +19,6 @@
             --accent-light: #2471a3;
             --warm: #f5f3ee;
         }
-
         body {
             font-family: 'DM Sans', sans-serif;
             background: var(--paper);
@@ -28,14 +26,12 @@
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
         }
-
         .site-header {
             padding: 3rem 2rem 2rem;
             max-width: 900px;
             margin: 0 auto;
             border-bottom: 2px solid var(--ink);
         }
-
         .site-header h1 {
             font-family: 'DM Serif Display', serif;
             font-size: 2.4rem;
@@ -44,7 +40,6 @@
             color: var(--ink);
             margin-bottom: 0.25rem;
         }
-
         .site-header .subtitle {
             font-size: 0.95rem;
             color: var(--mid);
@@ -52,35 +47,29 @@
             letter-spacing: 0.04em;
             text-transform: uppercase;
         }
-
         .site-header .contact {
             margin-top: 1rem;
             font-size: 0.85rem;
             color: var(--mid);
         }
-
         .site-header .contact a {
             color: var(--accent);
             text-decoration: none;
         }
-
         .site-header .contact a:hover {
             text-decoration: underline;
         }
-
         .intro {
             max-width: 900px;
             margin: 0 auto;
             padding: 2.5rem 2rem 1.5rem;
         }
-
         .intro p {
             font-size: 1.1rem;
             color: var(--mid);
             max-width: 680px;
             line-height: 1.7;
         }
-
         .case-studies-grid {
             max-width: 900px;
             margin: 0 auto;
@@ -89,7 +78,6 @@
             flex-direction: column;
             gap: 0;
         }
-
         .case-study-card {
             display: block;
             text-decoration: none;
@@ -98,19 +86,15 @@
             border-bottom: 1px solid var(--light);
             transition: all 0.2s ease;
         }
-
         .case-study-card:first-child {
             border-top: 1px solid var(--light);
         }
-
         .case-study-card:hover {
             padding-left: 1rem;
         }
-
         .case-study-card:hover .card-title {
             color: var(--accent);
         }
-
         .card-number {
             font-size: 0.75rem;
             font-weight: 600;
@@ -119,7 +103,6 @@
             color: var(--mid);
             margin-bottom: 0.5rem;
         }
-
         .card-title {
             font-family: 'DM Serif Display', serif;
             font-size: 1.5rem;
@@ -128,28 +111,24 @@
             margin-bottom: 0.35rem;
             transition: color 0.2s ease;
         }
-
         .card-subtitle {
             font-size: 0.95rem;
             color: var(--mid);
             margin-bottom: 1rem;
             font-style: italic;
         }
-
         .card-description {
             font-size: 0.9rem;
             color: var(--mid);
             max-width: 640px;
             line-height: 1.65;
         }
-
         .card-tags {
             display: flex;
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-top: 1rem;
         }
-
         .card-tag {
             font-size: 0.7rem;
             font-weight: 500;
@@ -160,7 +139,6 @@
             border: 1px solid var(--light);
             color: var(--mid);
         }
-
         .site-footer {
             max-width: 900px;
             margin: 0 auto;
@@ -172,16 +150,13 @@
             justify-content: space-between;
             align-items: center;
         }
-
         .site-footer a {
             color: var(--accent);
             text-decoration: none;
         }
-
         .site-footer a:hover {
             text-decoration: underline;
         }
-
         @media (max-width: 640px) {
             .site-header { padding: 2rem 1.25rem 1.5rem; }
             .site-header h1 { font-size: 1.8rem; }
@@ -202,11 +177,9 @@
             <a href="https://lorraineckharbanda.github.io/edge-cases/">Edge Cases Framework</a>
         </div>
     </header>
-
     <section class="intro">
         <p>Case studies in program management, cross-functional delivery at scale, and operational excellence. Each represents a system I built from the ground up to solve a real organizational problem, with measurable outcomes.</p>
     </section>
-
     <section class="case-studies-grid">
         <a href="cpi.html" class="case-study-card">
             <div class="card-number">Case Study 01</div>
@@ -220,9 +193,22 @@
                 <span class="card-tag">Reporting Infrastructure</span>
             </div>
         </a>
-
-        <a href="nearmap.html" class="case-study-card">
+        <a href="adobe-fairness.html" class="case-study-card">
             <div class="card-number">Case Study 02</div>
+            <div class="card-title">Adobe Facial Feature Annotation: Bias Detection &amp; Fairness Audit at Scale</div>
+            <div class="card-subtitle">Building Responsible AI Data Pipelines for Systems That Touch Every Face</div>
+            <div class="card-description">Caught systematic annotator bias in a live production pipeline before it shipped to Adobe, then drove a full fairness audit that 5&times; the dataset &mdash; expanding demographic coverage using the Monk Skin Tone Scale and ITA, with rigorous provenance controls including local vendor collection in Sub-Saharan Africa. Standards adopted across Adobe Firefly, Photoshop, and all facial-feature AI products.</div>
+            <div class="card-tags">
+                <span class="card-tag">Responsible AI</span>
+                <span class="card-tag">Bias Detection</span>
+                <span class="card-tag">Data Provenance</span>
+                <span class="card-tag">Fairness Auditing</span>
+                <span class="card-tag">AI/ML Annotation</span>
+                <span class="card-tag">Adobe</span>
+            </div>
+        </a>
+        <a href="nearmap.html" class="case-study-card">
+            <div class="card-number">Case Study 03</div>
             <div class="card-title">Transforming Satellite Imagery Annotation for NearMap</div>
             <div class="card-subtitle">Scaling a High-Complexity Data Collection Pipeline from Crisis to Growth</div>
             <div class="card-description">Took a hemorrhaging annotation pipeline, 78% attrition, $700K/month in penalties, and rebuilt it into a scalable operation that grew the account 250% in one quarter while eliminating all late penalties.</div>
@@ -233,9 +219,8 @@
                 <span class="card-tag">Account Growth</span>
             </div>
         </a>
-
         <a href="walmart.html" class="case-study-card">
-            <div class="card-number">Case Study 03</div>
+            <div class="card-number">Case Study 04</div>
             <div class="card-title">Walmart Product Categorization</div>
             <div class="card-subtitle">Redesigning AI Annotation Through Cognitive Load Analysis and LLM Pre-Labeling</div>
             <div class="card-description">Discovered a hidden 69% quality crisis in a "stable" multi-million-dollar annotation pipeline, diagnosed cognitive load as root cause by working as an annotator, and redesigned the project from 480-category classification to LLM pre-labeled validation, achieving 98% gold set accuracy and growing the account from $1.8M to $3.2M.</div>
@@ -248,9 +233,8 @@
                 <span class="card-tag">Account Growth</span>
             </div>
         </a>
-
-         <a href="surface.html" class="case-study-card">
-            <div class="card-number">Case Study 04</div>
+        <a href="surface.html" class="case-study-card">
+            <div class="card-number">Case Study 05</div>
             <div class="card-title">Surface Pro Global Launch Release Management</div>
             <div class="card-subtitle">QA, Stress Testing &amp; High-QPS Readiness for a Multi-Device, Multi-Locale Global Launch</div>
             <div class="card-description">Led engineering and release management for a 3,000+ page, 43-language global web experience launching alongside a major product release, a platform migration, and a chatbot deployment, all in one quarter.</div>
@@ -261,9 +245,8 @@
                 <span class="card-tag">Microsoft</span>
             </div>
         </a>
-
         <a href="oemweb.html" class="case-study-card">
-            <div class="card-number">Case Study 05</div>
+            <div class="card-number">Case Study 06</div>
             <div class="card-title">Data Governance Under Federal Judicial Oversight</div>
             <div class="card-subtitle">OEMWeb, OCE &amp; ECE Platform Management for the Microsoft Antitrust Consent Decree</div>
             <div class="card-description">Led platform operations and data governance for the systems managing Microsoft's 17,000+ OEM partner ecosystem under federal consent decree, where every data action had to be auditable, versioned, and court-ready.</div>
@@ -275,7 +258,6 @@
             </div>
         </a>
     </section>
-
     <footer class="site-footer">
         <span>&copy; 2026 Lorraine C. Kharbanda</span>
         <span>Prepared May 2026</span>
